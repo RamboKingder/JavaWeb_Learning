@@ -17,6 +17,8 @@ public class SysFilter implements Filter {
 
         if(req.getSession().getAttribute(Constant.USER_SESSION) == null){
             resp.sendRedirect("/JavaWeb-Filter/sys/error.jsp");
+            System.out.println("进行了一次过滤。。。。。。。。。。。。。。。。。。。。。。。");
+            filterChain.doFilter(servletRequest, servletResponse);
         }
 
         filterChain.doFilter(servletRequest, servletResponse);

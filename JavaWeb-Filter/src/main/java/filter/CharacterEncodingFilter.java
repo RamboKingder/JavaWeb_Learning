@@ -9,14 +9,16 @@ public class CharacterEncodingFilter implements Filter{
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        servletRequest.setCharacterEncoding("GBK");
-        servletResponse.setCharacterEncoding("GBK");
-        servletResponse.setContentType("text/html;charset=utf-8");
+
+        servletResponse.setContentType("text/html;");
+        servletRequest.setCharacterEncoding("UTF-8");
+        servletResponse.setCharacterEncoding("UTF-8");
 
         System.out.println("CharsetEncodingFilter执行前...");
         // 让我们的请求继续走，如果不写，程序到这里就会拦截停止
         filterChain.doFilter(servletRequest, servletResponse);
         System.out.println("CharsetEncodingFilter执行后...");
+
     }
 
     public void destroy() {

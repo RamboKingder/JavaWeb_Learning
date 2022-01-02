@@ -47,7 +47,7 @@
     </filter>
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
-        <!--   *代表servlet目录下的所有请求都会经过这个过滤器     -->
+        <!--   这个路径代表servlet目录下的所有请求都会经过这个过滤器     -->
         <url-pattern>/servlet/*</url-pattern>
     </filter-mapping>
 
